@@ -26,9 +26,9 @@
             filePath = "OpenGLES_Ch2_2/TrangleViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "-loadShaders"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

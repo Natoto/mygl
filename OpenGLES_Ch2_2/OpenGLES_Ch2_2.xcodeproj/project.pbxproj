@@ -13,17 +13,17 @@
 		03D4E61613EDDFB1007A9B0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03D4E61413EDDFB1007A9B0E /* InfoPlist.strings */; };
 		03D4E61813EDDFB1007A9B0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D4E61713EDDFB1007A9B0E /* main.m */; };
 		03D4E61C13EDDFB1007A9B0E /* OpenGLES_Ch2_2AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D4E61B13EDDFB1007A9B0E /* OpenGLES_Ch2_2AppDelegate.m */; };
-		03D4E61F13EDDFB1007A9B0E /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D4E61D13EDDFB1007A9B0E /* MainStoryboard_iPhone.storyboard */; };
-		03D4E62213EDDFB1007A9B0E /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D4E62013EDDFB1007A9B0E /* MainStoryboard_iPad.storyboard */; };
 		03D4E62513EDDFB1007A9B0E /* OpenGLES_Ch2_2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D4E62413EDDFB1007A9B0E /* OpenGLES_Ch2_2ViewController.m */; };
 		03D4E63A13EDE068007A9B0E /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D4E63713EDE068007A9B0E /* GLKit.framework */; };
 		03D4E63B13EDE068007A9B0E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D4E63813EDE068007A9B0E /* OpenGLES.framework */; };
 		03D4E63C13EDE068007A9B0E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D4E63913EDE068007A9B0E /* QuartzCore.framework */; };
 		78FC63F72663030400D81D9C /* v.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 78FC63F62663030400D81D9C /* v.glsl */; };
 		78FC63FA2663031500D81D9C /* f.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 78FC63F92663031500D81D9C /* f.glsl */; };
-		78FC63FE26630B9F00D81D9C /* TrangleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC63FD26630B9F00D81D9C /* TrangleViewController.m */; };
+		78FC63FE26630B9F00D81D9C /* HelloWorldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC63FD26630B9F00D81D9C /* HelloWorldViewController.m */; };
 		78FC6405266310F800D81D9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78FC6404266310F800D81D9C /* Main.storyboard */; };
 		78FC6409266311E500D81D9C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78FC6408266311E500D81D9C /* Launch Screen.storyboard */; };
+		78FC6410266314D000D81D9C /* TrangleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC640F266314D000D81D9C /* TrangleViewController.m */; };
+		78FC641326631B9C00D81D9C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D4E63713EDE068007A9B0E /* GLKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +37,6 @@
 		03D4E61913EDDFB1007A9B0E /* OpenGLES_Ch2_2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenGLES_Ch2_2-Prefix.pch"; sourceTree = "<group>"; };
 		03D4E61A13EDDFB1007A9B0E /* OpenGLES_Ch2_2AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLES_Ch2_2AppDelegate.h; sourceTree = "<group>"; };
 		03D4E61B13EDDFB1007A9B0E /* OpenGLES_Ch2_2AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGLES_Ch2_2AppDelegate.m; sourceTree = "<group>"; };
-		03D4E61E13EDDFB1007A9B0E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		03D4E62113EDDFB1007A9B0E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		03D4E62313EDDFB1007A9B0E /* OpenGLES_Ch2_2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLES_Ch2_2ViewController.h; sourceTree = "<group>"; };
 		03D4E62413EDDFB1007A9B0E /* OpenGLES_Ch2_2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGLES_Ch2_2ViewController.m; sourceTree = "<group>"; };
 		03D4E63713EDE068007A9B0E /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
@@ -46,10 +44,12 @@
 		03D4E63913EDE068007A9B0E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		78FC63F62663030400D81D9C /* v.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = v.glsl; sourceTree = "<group>"; };
 		78FC63F92663031500D81D9C /* f.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = f.glsl; sourceTree = "<group>"; };
-		78FC63FC26630B9F00D81D9C /* TrangleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrangleViewController.h; sourceTree = "<group>"; };
-		78FC63FD26630B9F00D81D9C /* TrangleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrangleViewController.m; sourceTree = "<group>"; };
+		78FC63FC26630B9F00D81D9C /* HelloWorldViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldViewController.h; sourceTree = "<group>"; };
+		78FC63FD26630B9F00D81D9C /* HelloWorldViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldViewController.m; sourceTree = "<group>"; };
 		78FC6404266310F800D81D9C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		78FC6408266311E500D81D9C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		78FC640E266314D000D81D9C /* TrangleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrangleViewController.h; sourceTree = "<group>"; };
+		78FC640F266314D000D81D9C /* TrangleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrangleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +61,7 @@
 				03D4E60E13EDDFB1007A9B0E /* Foundation.framework in Frameworks */,
 				03D4E61013EDDFB1007A9B0E /* CoreGraphics.framework in Frameworks */,
 				03D4E63A13EDE068007A9B0E /* GLKit.framework in Frameworks */,
+				78FC641326631B9C00D81D9C /* GLKit.framework in Frameworks */,
 				03D4E63B13EDE068007A9B0E /* OpenGLES.framework in Frameworks */,
 				03D4E63C13EDE068007A9B0E /* QuartzCore.framework in Frameworks */,
 			);
@@ -108,12 +109,12 @@
 				78FC63F92663031500D81D9C /* f.glsl */,
 				78FC6408266311E500D81D9C /* Launch Screen.storyboard */,
 				78FC6404266310F800D81D9C /* Main.storyboard */,
-				03D4E61D13EDDFB1007A9B0E /* MainStoryboard_iPhone.storyboard */,
-				03D4E62013EDDFB1007A9B0E /* MainStoryboard_iPad.storyboard */,
 				03D4E62313EDDFB1007A9B0E /* OpenGLES_Ch2_2ViewController.h */,
 				03D4E62413EDDFB1007A9B0E /* OpenGLES_Ch2_2ViewController.m */,
-				78FC63FC26630B9F00D81D9C /* TrangleViewController.h */,
-				78FC63FD26630B9F00D81D9C /* TrangleViewController.m */,
+				78FC63FC26630B9F00D81D9C /* HelloWorldViewController.h */,
+				78FC63FD26630B9F00D81D9C /* HelloWorldViewController.m */,
+				78FC640E266314D000D81D9C /* TrangleViewController.h */,
+				78FC640F266314D000D81D9C /* TrangleViewController.m */,
 				03D4E61213EDDFB1007A9B0E /* Supporting Files */,
 			);
 			path = OpenGLES_Ch2_2;
@@ -185,8 +186,6 @@
 				78FC63F72663030400D81D9C /* v.glsl in Resources */,
 				03D4E61613EDDFB1007A9B0E /* InfoPlist.strings in Resources */,
 				78FC6405266310F800D81D9C /* Main.storyboard in Resources */,
-				03D4E61F13EDDFB1007A9B0E /* MainStoryboard_iPhone.storyboard in Resources */,
-				03D4E62213EDDFB1007A9B0E /* MainStoryboard_iPad.storyboard in Resources */,
 				78FC6409266311E500D81D9C /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,7 +199,8 @@
 			files = (
 				03D4E61813EDDFB1007A9B0E /* main.m in Sources */,
 				03D4E61C13EDDFB1007A9B0E /* OpenGLES_Ch2_2AppDelegate.m in Sources */,
-				78FC63FE26630B9F00D81D9C /* TrangleViewController.m in Sources */,
+				78FC6410266314D000D81D9C /* TrangleViewController.m in Sources */,
+				78FC63FE26630B9F00D81D9C /* HelloWorldViewController.m in Sources */,
 				03D4E62513EDDFB1007A9B0E /* OpenGLES_Ch2_2ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,22 +214,6 @@
 				03D4E61513EDDFB1007A9B0E /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		03D4E61D13EDDFB1007A9B0E /* MainStoryboard_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				03D4E61E13EDDFB1007A9B0E /* en */,
-			);
-			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		03D4E62013EDDFB1007A9B0E /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				03D4E62113EDDFB1007A9B0E /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
