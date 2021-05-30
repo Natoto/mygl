@@ -24,6 +24,8 @@
 		78FC6409266311E500D81D9C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78FC6408266311E500D81D9C /* Launch Screen.storyboard */; };
 		78FC6410266314D000D81D9C /* TrangleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC640F266314D000D81D9C /* TrangleViewController.m */; };
 		78FC641326631B9C00D81D9C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D4E63713EDE068007A9B0E /* GLKit.framework */; };
+		78FC64172663743200D81D9C /* Shader.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC64162663743200D81D9C /* Shader.m */; };
+		78FC641B26637E7D00D81D9C /* TrangleSimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC641926637E7D00D81D9C /* TrangleSimpleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,10 @@
 		78FC6408266311E500D81D9C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		78FC640E266314D000D81D9C /* TrangleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrangleViewController.h; sourceTree = "<group>"; };
 		78FC640F266314D000D81D9C /* TrangleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrangleViewController.m; sourceTree = "<group>"; };
+		78FC64152663743200D81D9C /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		78FC64162663743200D81D9C /* Shader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Shader.m; sourceTree = "<group>"; };
+		78FC641926637E7D00D81D9C /* TrangleSimpleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrangleSimpleViewController.m; sourceTree = "<group>"; };
+		78FC641A26637E7D00D81D9C /* TrangleSimpleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrangleSimpleViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +117,12 @@
 				78FC6404266310F800D81D9C /* Main.storyboard */,
 				03D4E62313EDDFB1007A9B0E /* OpenGLES_Ch2_2ViewController.h */,
 				03D4E62413EDDFB1007A9B0E /* OpenGLES_Ch2_2ViewController.m */,
+				78FC64152663743200D81D9C /* Shader.h */,
+				78FC64162663743200D81D9C /* Shader.m */,
 				78FC63FC26630B9F00D81D9C /* HelloWorldViewController.h */,
 				78FC63FD26630B9F00D81D9C /* HelloWorldViewController.m */,
+				78FC641A26637E7D00D81D9C /* TrangleSimpleViewController.h */,
+				78FC641926637E7D00D81D9C /* TrangleSimpleViewController.m */,
 				78FC640E266314D000D81D9C /* TrangleViewController.h */,
 				78FC640F266314D000D81D9C /* TrangleViewController.m */,
 				03D4E61213EDDFB1007A9B0E /* Supporting Files */,
@@ -197,10 +207,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78FC641B26637E7D00D81D9C /* TrangleSimpleViewController.m in Sources */,
 				03D4E61813EDDFB1007A9B0E /* main.m in Sources */,
 				03D4E61C13EDDFB1007A9B0E /* OpenGLES_Ch2_2AppDelegate.m in Sources */,
 				78FC6410266314D000D81D9C /* TrangleViewController.m in Sources */,
 				78FC63FE26630B9F00D81D9C /* HelloWorldViewController.m in Sources */,
+				78FC64172663743200D81D9C /* Shader.m in Sources */,
 				03D4E62513EDDFB1007A9B0E /* OpenGLES_Ch2_2ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
