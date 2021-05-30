@@ -19,16 +19,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7F4326C0-71DE-47E4-A515-8CAD4372D6C1"
+            uuid = "1FABEF86-EA1F-475D-AD90-B73C66628A28"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenGLES_Ch2_2/TrangleViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "-loadShaders"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
+            landmarkName = "-glkView:drawInRect:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
