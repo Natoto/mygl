@@ -26,6 +26,10 @@
 		78FC641326631B9C00D81D9C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D4E63713EDE068007A9B0E /* GLKit.framework */; };
 		78FC64172663743200D81D9C /* Shader.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC64162663743200D81D9C /* Shader.m */; };
 		78FC641B26637E7D00D81D9C /* TrangleSimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC641926637E7D00D81D9C /* TrangleSimpleViewController.m */; };
+		78FC64202663B04500D81D9C /* TextureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC641F2663B04500D81D9C /* TextureViewController.m */; };
+		78FC647F2663CD3B00D81D9C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78FC647E2663CD3B00D81D9C /* Media.xcassets */; };
+		78FC64822663CD6C00D81D9C /* duck_sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78FC64812663CD6C00D81D9C /* duck_sample.jpg */; };
+		78FC64862663D2F200D81D9C /* Texture2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC64842663D2F200D81D9C /* Texture2ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +60,12 @@
 		78FC64162663743200D81D9C /* Shader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Shader.m; sourceTree = "<group>"; };
 		78FC641926637E7D00D81D9C /* TrangleSimpleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrangleSimpleViewController.m; sourceTree = "<group>"; };
 		78FC641A26637E7D00D81D9C /* TrangleSimpleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrangleSimpleViewController.h; sourceTree = "<group>"; };
+		78FC641E2663B04500D81D9C /* TextureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextureViewController.h; sourceTree = "<group>"; };
+		78FC641F2663B04500D81D9C /* TextureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextureViewController.m; sourceTree = "<group>"; };
+		78FC647E2663CD3B00D81D9C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		78FC64812663CD6C00D81D9C /* duck_sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = duck_sample.jpg; sourceTree = "<group>"; };
+		78FC64842663D2F200D81D9C /* Texture2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture2ViewController.m; sourceTree = "<group>"; };
+		78FC64852663D2F200D81D9C /* Texture2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2ViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,11 +120,13 @@
 			isa = PBXGroup;
 			children = (
 				03D4E61A13EDDFB1007A9B0E /* OpenGLES_Ch2_2AppDelegate.h */,
+				78FC647E2663CD3B00D81D9C /* Media.xcassets */,
 				03D4E61B13EDDFB1007A9B0E /* OpenGLES_Ch2_2AppDelegate.m */,
 				78FC63F62663030400D81D9C /* v.glsl */,
 				78FC63F92663031500D81D9C /* f.glsl */,
 				78FC6408266311E500D81D9C /* Launch Screen.storyboard */,
 				78FC6404266310F800D81D9C /* Main.storyboard */,
+				78FC64812663CD6C00D81D9C /* duck_sample.jpg */,
 				03D4E62313EDDFB1007A9B0E /* OpenGLES_Ch2_2ViewController.h */,
 				03D4E62413EDDFB1007A9B0E /* OpenGLES_Ch2_2ViewController.m */,
 				78FC64152663743200D81D9C /* Shader.h */,
@@ -125,6 +137,10 @@
 				78FC641926637E7D00D81D9C /* TrangleSimpleViewController.m */,
 				78FC640E266314D000D81D9C /* TrangleViewController.h */,
 				78FC640F266314D000D81D9C /* TrangleViewController.m */,
+				78FC64852663D2F200D81D9C /* Texture2ViewController.h */,
+				78FC64842663D2F200D81D9C /* Texture2ViewController.m */,
+				78FC641E2663B04500D81D9C /* TextureViewController.h */,
+				78FC641F2663B04500D81D9C /* TextureViewController.m */,
 				03D4E61213EDDFB1007A9B0E /* Supporting Files */,
 			);
 			path = OpenGLES_Ch2_2;
@@ -196,6 +212,8 @@
 				78FC63F72663030400D81D9C /* v.glsl in Resources */,
 				03D4E61613EDDFB1007A9B0E /* InfoPlist.strings in Resources */,
 				78FC6405266310F800D81D9C /* Main.storyboard in Resources */,
+				78FC64822663CD6C00D81D9C /* duck_sample.jpg in Resources */,
+				78FC647F2663CD3B00D81D9C /* Media.xcassets in Resources */,
 				78FC6409266311E500D81D9C /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +227,8 @@
 			files = (
 				78FC641B26637E7D00D81D9C /* TrangleSimpleViewController.m in Sources */,
 				03D4E61813EDDFB1007A9B0E /* main.m in Sources */,
+				78FC64862663D2F200D81D9C /* Texture2ViewController.m in Sources */,
+				78FC64202663B04500D81D9C /* TextureViewController.m in Sources */,
 				03D4E61C13EDDFB1007A9B0E /* OpenGLES_Ch2_2AppDelegate.m in Sources */,
 				78FC6410266314D000D81D9C /* TrangleViewController.m in Sources */,
 				78FC63FE26630B9F00D81D9C /* HelloWorldViewController.m in Sources */,

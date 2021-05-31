@@ -9,6 +9,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#define STRINGIZE(x) @#x
+#define SHADER_STRING(text) STRINGIZE(text)
+
+#define MYSHADER(STR) @#STR ;
+
 @interface Shader : NSObject
 
 - (BOOL)loadShaders:(NSString *)shadervshstr shaderfshstr:(NSString *)shaderfshstr;
