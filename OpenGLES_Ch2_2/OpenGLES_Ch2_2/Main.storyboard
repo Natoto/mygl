@@ -1,14 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g4Y-EC-Nhp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g4Y-EC-Nhp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="0zw-q3-rDE">
+            <objects>
+                <viewController id="ct0-LK-AUB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="osH-Dj-fUz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UDe-Fk-qey">
+                                <rect key="frame" x="86" y="202" width="90" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDU-1i-gHt">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="7el-1H-EuX"/>
+                                            <constraint firstAttribute="height" constant="40" id="mVL-1J-zG7"/>
+                                        </constraints>
+                                        <state key="normal" title="Helloworld"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0U-5F-UBd">
+                                        <rect key="frame" x="0.0" y="40" width="90" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ouA-PF-BPO"/>
+                                            <constraint firstAttribute="width" constant="90" id="v7g-39-inH"/>
+                                        </constraints>
+                                        <state key="normal" title="TrangleSimple"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kd2-EF-d5q">
+                                        <rect key="frame" x="0.0" y="80" width="90" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="Sdp-CS-UpY"/>
+                                            <constraint firstAttribute="height" constant="40" id="Vw5-NB-EaY"/>
+                                        </constraints>
+                                        <state key="normal" title="Helloworld"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4XD-59-ayg">
+                                        <rect key="frame" x="0.0" y="120" width="90" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="beM-CX-fLb"/>
+                                            <constraint firstAttribute="height" constant="40" id="uOP-2k-ba5"/>
+                                        </constraints>
+                                        <state key="normal" title="Helloworld"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIR-pj-vwA">
+                                        <rect key="frame" x="0.0" y="160" width="90" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="6qh-Rb-W8G"/>
+                                            <constraint firstAttribute="height" constant="40" id="cQV-fb-y4f"/>
+                                        </constraints>
+                                        <state key="normal" title="Helloworld"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2jc-G8-WQn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vRo-hj-Qr4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ay6-Y9-2dB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1814.4927536231885" y="516.96428571428567"/>
+        </scene>
         <!--Trangle Simple View Controller-->
         <scene sceneID="ovp-cX-8DN">
             <objects>
@@ -38,6 +101,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ydz-Y7-IIt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="41" y="84"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vAu-lb-tK7">
+            <objects>
+                <navigationController id="cEi-Oh-wOU" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C2O-gg-Ssm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ct0-LK-AUB" kind="relationship" relationship="rootViewController" id="Etu-Yk-ahu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h8n-14-kmy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2877" y="517"/>
         </scene>
         <!--Trangle View Controller-->
         <scene sceneID="2Qj-Jc-fOC">
