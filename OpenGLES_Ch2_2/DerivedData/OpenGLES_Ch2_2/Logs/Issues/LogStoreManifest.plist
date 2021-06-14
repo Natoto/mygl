@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>E6F968DD-6D0E-4EF5-AA23-1BA11B6DDCB1</key>
+		<key>305EF5C0-9F17-44F3-81D9-E2EC6BE91387</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogMajorGroupSection</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
 			<key>fileName</key>
-			<string>E6F968DD-6D0E-4EF5-AA23-1BA11B6DDCB1.xcactivitylog</string>
+			<string>305EF5C0-9F17-44F3-81D9-E2EC6BE91387.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -26,13 +26,13 @@
 			<key>signature</key>
 			<string>OpenGLES_Ch2_2-bwgtwffejlihgqestvwffnrnxydf</string>
 			<key>timeStartedRecording</key>
-			<real>645332649.38845098</real>
+			<real>645352564.05040896</real>
 			<key>timeStoppedRecording</key>
-			<real>645332707.27717996</real>
+			<real>645352564.91694105</real>
 			<key>title</key>
 			<string>Build target OpenGLES_Ch2_2</string>
 			<key>uniqueIdentifier</key>
-			<string>E6F968DD-6D0E-4EF5-AA23-1BA11B6DDCB1</string>
+			<string>305EF5C0-9F17-44F3-81D9-E2EC6BE91387</string>
 		</dict>
 	</dict>
 	<key>preserveOldLogs</key>

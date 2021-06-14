@@ -6,6 +6,40 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
+		<key>38A56D96-F7A0-4A3D-B8E5-BD02ED8BF1FC</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>38A56D96-F7A0-4A3D-B8E5-BD02ED8BF1FC.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>OpenGLES_Ch2_2 project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>OpenGLES_Ch2_2</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run OpenGLES_Ch2_2</string>
+			<key>timeStartedRecording</key>
+			<real>645352506.02025199</real>
+			<key>timeStoppedRecording</key>
+			<real>645352563.38387501</real>
+			<key>title</key>
+			<string>Run OpenGLES_Ch2_2</string>
+			<key>uniqueIdentifier</key>
+			<string>38A56D96-F7A0-4A3D-B8E5-BD02ED8BF1FC</string>
+		</dict>
 		<key>3A88D56B-E217-4ED2-946D-330165F46F7A</key>
 		<dict>
 			<key>className</key>
@@ -39,6 +73,40 @@
 			<string>Run OpenGLES_Ch2_2</string>
 			<key>uniqueIdentifier</key>
 			<string>3A88D56B-E217-4ED2-946D-330165F46F7A</string>
+		</dict>
+		<key>8D30AD93-EF69-4A01-BBD4-8287B2637344</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>8D30AD93-EF69-4A01-BBD4-8287B2637344.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>OpenGLES_Ch2_2 project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>OpenGLES_Ch2_2</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run OpenGLES_Ch2_2</string>
+			<key>timeStartedRecording</key>
+			<real>645352403.27087402</real>
+			<key>timeStoppedRecording</key>
+			<real>645352504.49078095</real>
+			<key>title</key>
+			<string>Run OpenGLES_Ch2_2</string>
+			<key>uniqueIdentifier</key>
+			<string>8D30AD93-EF69-4A01-BBD4-8287B2637344</string>
 		</dict>
 	</dict>
 </dict>

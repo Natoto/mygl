@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g4Y-EC-Nhp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cEi-Oh-wOU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -17,54 +17,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UDe-Fk-qey">
-                                <rect key="frame" x="86" y="202" width="90" height="200"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UDe-Fk-qey">
+                                <rect key="frame" x="86" y="202" width="100" height="200"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDU-1i-gHt">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="7el-1H-EuX"/>
+                                            <constraint firstAttribute="width" constant="100" id="7el-1H-EuX"/>
                                             <constraint firstAttribute="height" constant="40" id="mVL-1J-zG7"/>
                                         </constraints>
                                         <state key="normal" title="Helloworld"/>
+                                        <connections>
+                                            <segue destination="TlE-5d-8LC" kind="push" id="RDz-Qs-Pqq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0U-5F-UBd">
-                                        <rect key="frame" x="0.0" y="40" width="90" height="40"/>
+                                        <rect key="frame" x="0.0" y="40" width="100" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ouA-PF-BPO"/>
-                                            <constraint firstAttribute="width" constant="90" id="v7g-39-inH"/>
+                                            <constraint firstAttribute="width" constant="100" id="v7g-39-inH"/>
                                         </constraints>
                                         <state key="normal" title="TrangleSimple"/>
+                                        <connections>
+                                            <segue destination="X09-9n-oMG" kind="push" id="eaG-Z2-gT8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kd2-EF-d5q">
-                                        <rect key="frame" x="0.0" y="80" width="90" height="40"/>
+                                        <rect key="frame" x="0.0" y="80" width="100" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="Sdp-CS-UpY"/>
+                                            <constraint firstAttribute="width" constant="100" id="Sdp-CS-UpY"/>
                                             <constraint firstAttribute="height" constant="40" id="Vw5-NB-EaY"/>
                                         </constraints>
-                                        <state key="normal" title="Helloworld"/>
+                                        <state key="normal" title="三角形"/>
+                                        <connections>
+                                            <segue destination="hVj-Mi-UD1" kind="push" id="s2C-a4-WS5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4XD-59-ayg">
-                                        <rect key="frame" x="0.0" y="120" width="90" height="40"/>
+                                        <rect key="frame" x="0.0" y="120" width="100" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="beM-CX-fLb"/>
                                             <constraint firstAttribute="height" constant="40" id="uOP-2k-ba5"/>
                                         </constraints>
-                                        <state key="normal" title="Helloworld"/>
+                                        <state key="normal" title="Texure纹理"/>
+                                        <connections>
+                                            <segue destination="3WO-F8-cgU" kind="push" id="mwP-Wf-jnj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIR-pj-vwA">
-                                        <rect key="frame" x="0.0" y="160" width="90" height="40"/>
+                                        <rect key="frame" x="0.0" y="160" width="100" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="6qh-Rb-W8G"/>
                                             <constraint firstAttribute="height" constant="40" id="cQV-fb-y4f"/>
                                         </constraints>
-                                        <state key="normal" title="Helloworld"/>
+                                        <state key="normal" title="纹理2"/>
+                                        <connections>
+                                            <segue destination="g4Y-EC-Nhp" kind="push" id="Q3X-bj-vPO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2jc-G8-WQn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UDe-Fk-qey" firstAttribute="leading" secondItem="2jc-G8-WQn" secondAttribute="leading" constant="86" id="ByU-Mf-vkp"/>
+                            <constraint firstItem="UDe-Fk-qey" firstAttribute="top" secondItem="2jc-G8-WQn" secondAttribute="top" constant="114" id="D9i-PC-FIN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vRo-hj-Qr4"/>
                 </viewController>
@@ -82,10 +99,11 @@
                         <viewLayoutGuide key="safeArea" id="ogg-aI-dXs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Dgh-5O-pHU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVF-jS-rHZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-84" y="1515"/>
+            <point key="canvasLocation" x="-833" y="1086"/>
         </scene>
         <!--Hello World View Controller-->
         <scene sceneID="X4Q-X2-Zke">
@@ -97,10 +115,11 @@
                         <viewLayoutGuide key="safeArea" id="3hc-2H-adF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="984-G1-AL2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ydz-Y7-IIt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="41" y="84"/>
+            <point key="canvasLocation" x="-800" y="155"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vAu-lb-tK7">
@@ -128,10 +147,11 @@
                         <viewLayoutGuide key="safeArea" id="zlE-Cj-S3V"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Q0m-MU-eyP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K3u-p6-hRT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-84" y="779"/>
+            <point key="canvasLocation" x="242" y="224"/>
         </scene>
         <!--Texture2 View Controller-->
         <scene sceneID="6jZ-a4-lSO">
@@ -143,10 +163,11 @@
                         <viewLayoutGuide key="safeArea" id="gGI-Jt-pwU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="SmL-yd-gCm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUE-bT-xo4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="837"/>
+            <point key="canvasLocation" x="326" y="956"/>
         </scene>
         <!--Texture View Controller-->
         <scene sceneID="x5t-m8-O02">
@@ -158,6 +179,7 @@
                         <viewLayoutGuide key="safeArea" id="hBm-XM-bId"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="eEa-Bp-PMG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tyz-RW-kAX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

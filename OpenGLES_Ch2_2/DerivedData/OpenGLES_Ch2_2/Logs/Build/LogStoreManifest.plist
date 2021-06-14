@@ -40,6 +40,108 @@
 			<key>uniqueIdentifier</key>
 			<string>28ED74AC-AB93-428E-B2AC-59577FC1E650</string>
 		</dict>
+		<key>33982AAD-888C-4E4C-B3FC-9006231421AC</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>33982AAD-888C-4E4C-B3FC-9006231421AC.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>OpenGLES_Ch2_2 project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>OpenGLES_Ch2_2</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build OpenGLES_Ch2_2</string>
+			<key>timeStartedRecording</key>
+			<real>645352563.96887803</real>
+			<key>timeStoppedRecording</key>
+			<real>645352564.92346001</real>
+			<key>title</key>
+			<string>Build OpenGLES_Ch2_2</string>
+			<key>uniqueIdentifier</key>
+			<string>33982AAD-888C-4E4C-B3FC-9006231421AC</string>
+		</dict>
+		<key>9DD01C83-28A9-4661-8A89-7AD2EAF61272</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>9DD01C83-28A9-4661-8A89-7AD2EAF61272.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>OpenGLES_Ch2_2 project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>OpenGLES_Ch2_2</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build OpenGLES_Ch2_2</string>
+			<key>timeStartedRecording</key>
+			<real>645352505.21793795</real>
+			<key>timeStoppedRecording</key>
+			<real>645352506.01593995</real>
+			<key>title</key>
+			<string>Build OpenGLES_Ch2_2</string>
+			<key>uniqueIdentifier</key>
+			<string>9DD01C83-28A9-4661-8A89-7AD2EAF61272</string>
+		</dict>
+		<key>C441A804-91EF-43A2-AEB1-D4D64E51E94C</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>C441A804-91EF-43A2-AEB1-D4D64E51E94C.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>OpenGLES_Ch2_2 project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>OpenGLES_Ch2_2</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build OpenGLES_Ch2_2</string>
+			<key>timeStartedRecording</key>
+			<real>645352396.00563705</real>
+			<key>timeStoppedRecording</key>
+			<real>645352403.24274695</real>
+			<key>title</key>
+			<string>Build OpenGLES_Ch2_2</string>
+			<key>uniqueIdentifier</key>
+			<string>C441A804-91EF-43A2-AEB1-D4D64E51E94C</string>
+		</dict>
 	</dict>
 </dict>
 </plist>
