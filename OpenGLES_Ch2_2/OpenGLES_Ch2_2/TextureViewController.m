@@ -85,11 +85,11 @@ typedef struct {
     GLsizeiptr bufferSizeBytes = sizeof(SenceVertex) * 4;
     glBufferData(GL_ARRAY_BUFFER, bufferSizeBytes, self.vertices, GL_STATIC_DRAW);  // 步骤三：缓存数据
 
-    // 设置顶点数据
+    // 设置顶点位置
     glEnableVertexAttribArray(GLKVertexAttribPosition);  // 步骤四：启用或禁用
     glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(SenceVertex), NULL + offsetof(SenceVertex, positionCoord));  // 步骤五：设置指针
 
-    // 设置纹理数据
+    // 设置纹理坐标
     glEnableVertexAttribArray(GLKVertexAttribTexCoord0);  // 步骤四：启用或禁用
     glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, sizeof(SenceVertex), NULL + offsetof(SenceVertex, textureCoord));  // 步骤五：设置指针
 

@@ -17,6 +17,7 @@
 		03D4E63A13EDE068007A9B0E /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D4E63713EDE068007A9B0E /* GLKit.framework */; };
 		03D4E63B13EDE068007A9B0E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D4E63813EDE068007A9B0E /* OpenGLES.framework */; };
 		03D4E63C13EDE068007A9B0E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D4E63913EDE068007A9B0E /* QuartzCore.framework */; };
+		78DAEB522677517100E2A8AA /* haha.png in Resources */ = {isa = PBXBuildFile; fileRef = 78DAEB512677517000E2A8AA /* haha.png */; };
 		78FC63F72663030400D81D9C /* v.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 78FC63F62663030400D81D9C /* v.glsl */; };
 		78FC63FA2663031500D81D9C /* f.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 78FC63F92663031500D81D9C /* f.glsl */; };
 		78FC63FE26630B9F00D81D9C /* HelloWorldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC63FD26630B9F00D81D9C /* HelloWorldViewController.m */; };
@@ -48,6 +49,7 @@
 		03D4E63713EDE068007A9B0E /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		03D4E63813EDE068007A9B0E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		03D4E63913EDE068007A9B0E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		78DAEB512677517000E2A8AA /* haha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = haha.png; sourceTree = "<group>"; };
 		78FC63F62663030400D81D9C /* v.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = v.glsl; sourceTree = "<group>"; };
 		78FC63F92663031500D81D9C /* f.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = f.glsl; sourceTree = "<group>"; };
 		78FC63FC26630B9F00D81D9C /* HelloWorldViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldViewController.h; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				03D4E61B13EDDFB1007A9B0E /* OpenGLES_Ch2_2AppDelegate.m */,
 				78FC63F62663030400D81D9C /* v.glsl */,
 				78FC63F92663031500D81D9C /* f.glsl */,
+				78DAEB512677517000E2A8AA /* haha.png */,
 				78FC6408266311E500D81D9C /* Launch Screen.storyboard */,
 				78FC6404266310F800D81D9C /* Main.storyboard */,
 				78FC64812663CD6C00D81D9C /* duck_sample.jpg */,
@@ -215,6 +218,7 @@
 				78FC64822663CD6C00D81D9C /* duck_sample.jpg in Resources */,
 				78FC647F2663CD3B00D81D9C /* Media.xcassets in Resources */,
 				78FC6409266311E500D81D9C /* Launch Screen.storyboard in Resources */,
+				78DAEB522677517100E2A8AA /* haha.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
