@@ -86,10 +86,10 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 #pragma mark - 绘制程序开始
 GLfloat vertices[] = {
 //     ---- 位置 ----       ---- 颜色 ----     - 纹理坐标 -
-     0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // 右上
-     0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // 右下
+     0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   2.0f, 2.0f,   // 右上
+     0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   2.0f, 0.0f,   // 右下
     -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // 左下
-    -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // 左上
+    -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 2.0f    // 左上
 };
 
 GLuint indices[] = {
@@ -110,9 +110,6 @@ void createTextureIfNeed(GLuint *texture, const char * boxpath)
         int width,height;
 //        const char * boxpath = "/Users/boob/Documents/demos/mygl/learnopengl/glfw-texture/shader.bundle/box.jpeg";
         unsigned char * image = SOIL_load_image(boxpath, &width, &height, 0, SOIL_LOAD_RGB);
-//        g_image = image;
-        
-//        GLuint texture;
         glGenTextures(1,texture);
         glBindTexture(GL_TEXTURE_2D,*texture);
         glTexImage2D(GL_TEXTURE_2D,0,GL_RGB,width,height,0,GL_RGB,GL_UNSIGNED_BYTE,image);
@@ -120,18 +117,27 @@ void createTextureIfNeed(GLuint *texture, const char * boxpath)
 //        g_texture = texture;
 
         //环绕模式
-        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,GL_MIRRORED_REPEAT);
-        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,GL_MIRRORED_REPEAT);
+        if (*texture == 1) {
+            glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,GL_CLAMP_TO_EDGE);
+            glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,GL_CLAMP_TO_EDGE);
+        }else {
+            glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,GL_MIRRORED_REPEAT);
+            glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,GL_MIRRORED_REPEAT);
+        }
+
         //设置边框
         float boarderColor[] = {1.0f,1.0f,0.0f,1.0f};
         glTexParameterfv(GL_TEXTURE_2D,GL_TEXTURE_BORDER_COLOR,boarderColor);
         //纹理过滤
-        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_NEAREST);
+//        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_NEAREST);
+//        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
         //多级渐远纹理
-        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR_MIPMAP_LINEAR);
-        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
-        
+//        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR_MIPMAP_LINEAR);
+//        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+      
+       glGenerateMipmap(GL_TEXTURE_2D);
         SOIL_free_image_data(image);
         glBindTexture(GL_TEXTURE_2D,0);
     }
@@ -160,9 +166,7 @@ void hbdraw()
         glEnableVertexAttribArray(2);
         
     }
-    
-   
-   
+     
   if (g_ebo == 0) {
       glGenBuffers(1,&g_ebo);//索引缓存对象
       glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,g_ebo);
@@ -194,6 +198,7 @@ void hbdraw()
     glActiveTexture(GL_TEXTURE1);
     glBindTexture(GL_TEXTURE_2D,g_texture1);
     glUniform1i(glGetUniformLocation(g_shaderProgram,"ourTexture2"),1);
+    
      
     glBindVertexArray(g_vao);
     glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,0);
