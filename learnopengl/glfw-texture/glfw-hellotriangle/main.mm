@@ -69,11 +69,25 @@ int main(int argc, char * argv[]) {
     glfwTerminate();
     return EXIT_SUCCESS;
 }
+static GLfloat mixTextureValue = 0.2;
 //输入控制，检查用户是否按下了返回键(Esc)
 void processInput(GLFWwindow *window)
 {
     if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS || glfwGetKey(window, GLFW_KEY_ENTER) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
+    
+    if(glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS ) {
+        if (mixTextureValue<=0) {
+            mixTextureValue = 1.0;
+        }
+        mixTextureValue -=0.1;
+    }
+    if(glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) {
+        if (mixTextureValue>=1) {
+            mixTextureValue = 0;
+        }
+        mixTextureValue +=0.1;
+    }
 }
 
 // 当用户改变窗口的大小的时候，视口也应该被调整
@@ -84,12 +98,13 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 }
 
 #pragma mark - 绘制程序开始
+const float texMaxCoor = 1.0f;
 GLfloat vertices[] = {
 //     ---- 位置 ----       ---- 颜色 ----     - 纹理坐标 -
-     0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   2.0f, 2.0f,   // 右上
-     0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   2.0f, 0.0f,   // 右下
-    -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // 左下
-    -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 2.0f    // 左上
+     0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   texMaxCoor, texMaxCoor,   // 右上
+     0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   texMaxCoor, 0.0f,         // 右下
+    -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,               // 左下
+    -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, texMaxCoor          // 左上
 };
 
 GLuint indices[] = {
@@ -198,7 +213,8 @@ void hbdraw()
     glActiveTexture(GL_TEXTURE1);
     glBindTexture(GL_TEXTURE_2D,g_texture1);
     glUniform1i(glGetUniformLocation(g_shaderProgram,"ourTexture2"),1);
-    
+     
+    glUniform1f(glGetUniformLocation(g_shaderProgram,"mixvalue"),mixTextureValue);
      
     glBindVertexArray(g_vao);
     glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,0);
