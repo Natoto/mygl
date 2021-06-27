@@ -89,9 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				78EA531C26876AEB00800E8F /* main.mm */,
+				785A905F2688785800825C52 /* Shader.hpp */,
 				785A905E2688785800825C52 /* Shader.cpp */,
 				785A906226887D3300825C52 /* shader.bundle */,
-				785A905F2688785800825C52 /* Shader.hpp */,
 			);
 			path = "glfw-hellotriangle";
 			sourceTree = "<group>";

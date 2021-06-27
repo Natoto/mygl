@@ -2,8 +2,11 @@
 layout (location = 0) in vec3 position;
 layout (location = 1) in vec3 color;
 out vec3 vertexColor;
+uniform float offset;
+out vec4 outPos;
 void main()
 {
-    gl_Position = vec4(position.x, position.y, position.z, 1.0);
+    outPos = vec4(position.x + offset, position.y, position.z, 1.0);
+    gl_Position = outPos;
     vertexColor = color;
 }
