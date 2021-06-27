@@ -102,6 +102,40 @@ GLuint g_vbo;
 static GLuint g_ebo;
 static unsigned char * g_image = nullptr;
 static GLuint g_texture;
+static GLuint g_texture1;
+
+void createTextureIfNeed(GLuint *texture, const char * boxpath)
+{
+    if (*texture == 0) {
+        int width,height;
+//        const char * boxpath = "/Users/boob/Documents/demos/mygl/learnopengl/glfw-texture/shader.bundle/box.jpeg";
+        unsigned char * image = SOIL_load_image(boxpath, &width, &height, 0, SOIL_LOAD_RGB);
+//        g_image = image;
+        
+//        GLuint texture;
+        glGenTextures(1,texture);
+        glBindTexture(GL_TEXTURE_2D,*texture);
+        glTexImage2D(GL_TEXTURE_2D,0,GL_RGB,width,height,0,GL_RGB,GL_UNSIGNED_BYTE,image);
+        glGenerateMipmap(GL_TEXTURE_2D);
+//        g_texture = texture;
+
+        //环绕模式
+        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,GL_MIRRORED_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,GL_MIRRORED_REPEAT);
+        //设置边框
+        float boarderColor[] = {1.0f,1.0f,0.0f,1.0f};
+        glTexParameterfv(GL_TEXTURE_2D,GL_TEXTURE_BORDER_COLOR,boarderColor);
+        //纹理过滤
+        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+        //多级渐远纹理
+        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR_MIPMAP_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+        
+        SOIL_free_image_data(image);
+        glBindTexture(GL_TEXTURE_2D,0);
+    }
+}
 void hbdraw()
 {
     if (g_vao ==0) {
@@ -137,37 +171,11 @@ void hbdraw()
       glBindBuffer(GL_ARRAY_BUFFER,0);
       glBindVertexArray(0);
   }
-   
+    const char * boxpath = "/Users/boob/Documents/demos/mygl/learnopengl/glfw-texture/shader.bundle/box.jpeg";
+    createTextureIfNeed(&g_texture, boxpath);
     
-        if (g_image == nullptr) {
-        int width,height;
-        const char * boxpath = "/Users/boob/Documents/demos/mygl/learnopengl/glfw-texture/shader.bundle/box.jpeg";
-        unsigned char * image = SOIL_load_image(boxpath, &width, &height, 0, SOIL_LOAD_RGB);
-        g_image = image;
-
-        GLuint texture;
-        glGenTextures(1,&texture);
-        glBindTexture(GL_TEXTURE_2D,texture);
-        glTexImage2D(GL_TEXTURE_2D,0,GL_RGB,width,height,0,GL_RGB,GL_UNSIGNED_BYTE,image);
-        glGenerateMipmap(GL_TEXTURE_2D);
-            g_texture = texture;
-
-        //环绕模式
-        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,GL_MIRRORED_REPEAT);
-        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,GL_MIRRORED_REPEAT);
-        //设置边框
-        float boarderColor[] = {1.0f,1.0f,0.0f,1.0f};
-        glTexParameterfv(GL_TEXTURE_2D,GL_TEXTURE_BORDER_COLOR,boarderColor);
-        //纹理过滤
-        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_NEAREST);
-        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
-        //多级渐远纹理
-        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR_MIPMAP_LINEAR);
-        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
-        
-        SOIL_free_image_data(image);
-        glBindTexture(GL_TEXTURE_2D,0);
-    }
+    const char * facepath = "/Users/boob/Documents/demos/mygl/learnopengl/glfw-texture/shader.bundle/awesomeface.png";
+    createTextureIfNeed(&g_texture1, facepath);
     
     /*
     offset
@@ -178,14 +186,21 @@ void hbdraw()
     glClear(GL_COLOR_BUFFER_BIT);
 //    glPolygonMode(GL_FRONT_AND_BACK,GL_LINES);
     glUseProgram(g_shaderProgram);
-    glBindVertexArray(g_vao);
-    //绘制类型，顶点个数，顶点数据类型，偏移量
-//    glDrawArrays(GL_TRIANGLES,0,3);
+    
+    glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D,g_texture);
+    glUniform1i(glGetUniformLocation(g_shaderProgram,"ourTexture1"),0 );
+    
+    glActiveTexture(GL_TEXTURE1);
+    glBindTexture(GL_TEXTURE_2D,g_texture1);
+    glUniform1i(glGetUniformLocation(g_shaderProgram,"ourTexture2"),1);
+     
+    glBindVertexArray(g_vao);
     glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,0);
      
     
     glBindVertexArray(0);
     glBindTexture(GL_TEXTURE_2D,0);
+    glBindTexture(GL_TEXTURE_2D,1);
 }
   
