@@ -26,12 +26,6 @@ static GLuint g_shaderProgram = 0;
 
 int main(int argc, char * argv[]) {
 
-    glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
-    glm::mat4 trans;
-    trans = glm::translate(trans, glm::vec3(1.0f, 1.0f, 0.0f));
-    vec = trans * vec;
-    std::cout << vec.x << "  " << vec.y  << "  " << vec.z << std::endl;
-    
     //初始化GLFW
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -203,6 +197,14 @@ void hbdraw()
 
       glBindBuffer(GL_ARRAY_BUFFER,0);
       glBindVertexArray(0);
+      
+      
+      glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
+      glm::mat4 trans(1.0f);
+      trans = glm::translate(trans, glm::vec3(1.0f, 1.0f, 0.0f));
+      vec = trans * vec;
+      std::cout << vec.x << "  " << vec.y  << "  " << vec.z << std::endl;
+      
   }
     const char * boxpath = GET_ROOTBUNDLE_PATH(box.jpeg);
     // "/Users/boob/Documents/demos/mygl/learnopengl/glfw-texture/shader.bundle/box.jpeg";
@@ -231,7 +233,15 @@ void hbdraw()
     glUniform1i(glGetUniformLocation(g_shaderProgram,"ourTexture2"),1);
      
     glUniform1f(glGetUniformLocation(g_shaderProgram,"mixvalue"),mixTextureValue);
+    
+    glm::mat4 trans(1.0f);//`glm::mat4 trans` may outputs wrong values https://stackoverflow.com/questions/47178228/glmtranslate-outputs-a-matrix-with-incorrect-values/47178441
+//    trans = glm::rotate(trans, 90.0f, glm::vec3(0.0f,0.0f,1.0f));
+    trans = glm::rotate(trans, (GLfloat)glfwGetTime() * 50.0f, glm::vec3(0.0f,0.0f,1.0f));
+    trans = glm::scale(trans, glm::vec3(0.5f,0.5f,0.5f));
      
+    GLuint transformLoc = glGetUniformLocation(g_shaderProgram,"transform");
+    glUniformMatrix4fv(transformLoc,1,GL_FALSE,glm::value_ptr(trans));
+    
     glBindVertexArray(g_vao);
     glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,0);
      
