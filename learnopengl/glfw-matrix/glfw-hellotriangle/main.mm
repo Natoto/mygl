@@ -236,7 +236,8 @@ void hbdraw()
     
     glm::mat4 trans(1.0f);//`glm::mat4 trans` may outputs wrong values https://stackoverflow.com/questions/47178228/glmtranslate-outputs-a-matrix-with-incorrect-values/47178441
 //    trans = glm::rotate(trans, 90.0f, glm::vec3(0.0f,0.0f,1.0f));
-    trans = glm::rotate(trans, (GLfloat)glfwGetTime() * 50.0f, glm::vec3(0.0f,0.0f,1.0f));
+    std::cout << (GLfloat)glfwGetTime()  << std::endl;
+    trans = glm::rotate(trans, (GLfloat)glfwGetTime() , glm::vec3(0.0f,0.0f,1.0f));
     trans = glm::scale(trans, glm::vec3(0.5f,0.5f,0.5f));
      
     GLuint transformLoc = glGetUniformLocation(g_shaderProgram,"transform");
