@@ -21,8 +21,8 @@ const unsigned int SCR_HEIGHT = 600;
 
 static GLuint g_shaderProgram = 0;
 
-#define ROOT_PATH(FILE) "/Users/boob/Documents/demos/mygl/learnopengl/glfw-matrix/shader.bundle/"#FILE
-#define GET_ROOTBUNDLE_PATH(FILE)  ROOT_PATH(FILE)
+#define ROOTBUNDLE_PATH(FILE) "/Users/boob/Documents/demos/mygl/learnopengl/glfw-coor/shader.bundle/"#FILE
+#define GET_ROOTBUNDLE_PATH(FILE)  ROOTBUNDLE_PATH(FILE)
 
 int main(int argc, char * argv[]) {
 
@@ -237,14 +237,38 @@ void hbdraw()
     float PI = 3.14159265;
     glm::mat4 trans(1.0f);//`glm::mat4 trans` may outputs wrong values https://stackoverflow.com/questions/47178228/glmtranslate-outputs-a-matrix-with-incorrect-values/47178441
 //    trans = glm::rotate(trans, 90.0f, glm::vec3(0.0f,0.0f,1.0f));
-    std::cout << (GLfloat)glfwGetTime()  << std::endl;
+//    std::cout << (GLfloat)glfwGetTime()  << std::endl;
 //    trans = glm::rotate(trans, (GLfloat)glfwGetTime() , glm::vec3(0.0f,0.0f,1.0f));
+    /*
     float angle = (90.0/360.0) * PI * 2;
     trans = glm::rotate(trans,  angle, glm::vec3(0.0f,0.0f,1.0f));
     trans = glm::scale(trans, glm::vec3(0.5f,0.5f,0.5f));
-     
     GLuint transformLoc = glGetUniformLocation(g_shaderProgram,"transform");
     glUniformMatrix4fv(transformLoc,1,GL_FALSE,glm::value_ptr(trans));
+     */
+    
+    glm::mat4 model(1.0f);
+    float angle1 = (-55.0f/360.0f) * PI * 2;
+    model = glm::rotate(model,  angle1, glm::vec3(1.0f, 0.0f, 0.0f));
+    
+    glm::mat4 view(1.0f);
+    view = glm::translate(view, glm::vec3(0.0f,0.0f,-3.0f));
+    
+    glm::mat4 projection(1.0f);
+    float rate = (float)(SCR_WIDTH / SCR_HEIGHT );
+    float angle2 = (45.0f/360.0f) * PI * 2;
+    //视野大小  宽高比  近平面 原屏幕
+    projection = glm::perspective(angle2, rate, 0.1f, 100.0f);
+    
+    GLint modelLoc = glGetUniformLocation(g_shaderProgram,"model");
+    glUniformMatrix4fv(modelLoc,1,GL_FALSE,glm::value_ptr(model));
+    
+    GLint viewLoc = glGetUniformLocation(g_shaderProgram,"view");
+    glUniformMatrix4fv(viewLoc,1,GL_FALSE,glm::value_ptr(view));
+    
+    GLint projectionLoc = glGetUniformLocation(g_shaderProgram,"projection");
+    glUniformMatrix4fv(projectionLoc,1,GL_FALSE,glm::value_ptr(projection));
+    
     
     glBindVertexArray(g_vao);
     glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,0);
