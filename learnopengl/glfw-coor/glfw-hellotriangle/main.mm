@@ -21,6 +21,9 @@ const unsigned int SCR_HEIGHT = 600;
 
 static GLuint g_shaderProgram = 0;
 
+///  画旋转立方体
+#define DRAW_CUBE_3D  0
+
 #define ROOTBUNDLE_PATH(FILE) "/Users/boob/Documents/demos/mygl/learnopengl/glfw-coor/shader.bundle/"#FILE
 #define GET_ROOTBUNDLE_PATH(FILE)  ROOTBUNDLE_PATH(FILE)
 
@@ -53,9 +56,17 @@ int main(int argc, char * argv[]) {
         return -1;
     }
     
-    const char * fspath = GET_ROOTBUNDLE_PATH(shader.fs);
     // "/Users/boob/Documents/demos/mygl/learnopengl/glfw-texture/shader.bundle/shader.fs";
-    const char * vspath = GET_ROOTBUNDLE_PATH(shader.vs);// "/Users/boob/Documents/demos/mygl/learnopengl/glfw-texture/shader.bundle/shader.vs";
+     
+#if  DRAW_CUBE_3D
+    const char * fspath = GET_ROOTBUNDLE_PATH(shader.fs);
+    const char * vspath = GET_ROOTBUNDLE_PATH(shadercube.vs);
+#else  //DRAW_CUBE_3D
+    const char * fspath = GET_ROOTBUNDLE_PATH(shader.fs);
+    const char * vspath = GET_ROOTBUNDLE_PATH(shader.vs);
+#endif  // if DRAW_CUBE_3D
+
+    // "/Users/boob/Documents/demos/mygl/learnopengl/glfw-texture/shader.bundle/shader.vs";
     Shader ourShader(vspath , fspath);
     g_shaderProgram = ourShader.Program;
     
@@ -107,6 +118,8 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 
 #pragma mark - 绘制程序开始
 const float texMaxCoor = 1.0f;
+
+#if !DRAW_CUBE_3D
 GLfloat vertices[] = {
 //     ---- 位置 ----       ---- 颜色 ----     - 纹理坐标 -
      0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   texMaxCoor, texMaxCoor,   // 右上
@@ -114,7 +127,59 @@ GLfloat vertices[] = {
     -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,               // 左下
     -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, texMaxCoor          // 左上
 };
+#else 
+float vertices[] = {
+    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+     0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
 
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+
+    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
+};
+#endif 
+
+//
+//GLuint indices0[] = {
+//  0,1,3, //第一个三角形
+//  1,2,3  //第二个三角形
+//};
+
+//6个面 x 每个面2个 = 12 三角形
 GLuint indices[] = {
   0,1,3, //第一个三角形
   1,2,3  //第二个三角形
@@ -176,20 +241,34 @@ void hbdraw()
         glGenBuffers(1,&g_vbo);
         glBindBuffer(GL_ARRAY_BUFFER,g_vbo);
         glBufferData(GL_ARRAY_BUFFER,sizeof(vertices),vertices,GL_STATIC_DRAW);
+         
         
+#if  DRAW_CUBE_3D
+        
+        int rowsize = 5; //8;
+     
         //设置顶点属性指针
-        glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,8*sizeof(float),(GLvoid *)0);
+        glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,rowsize*sizeof(float),(GLvoid *)0);
         //启用vao
         glEnableVertexAttribArray(0);
-        
-        glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,8*sizeof(float),(GLvoid *)(3*sizeof(GLfloat)));
+        glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,rowsize*sizeof(float),(GLvoid *)(3*sizeof(GLfloat)));
         glEnableVertexAttribArray(1);
-        
-        glVertexAttribPointer(2,2,GL_FLOAT,GL_FALSE,8*sizeof(float),(GLvoid *)(6*sizeof(GLfloat)));
-        glEnableVertexAttribArray(2);
-        
+#else //DRAW_CUBE_3D
+         
+        int rowsize = 8; 
+        //设置顶点属性指针
+        glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,rowsize*sizeof(float),(GLvoid *)0);
+        //启用vao
+        glEnableVertexAttribArray(0);
+        glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,rowsize*sizeof(float),(GLvoid *)(3*sizeof(GLfloat)));
+        glEnableVertexAttribArray(1);
+        glVertexAttribPointer(2,2,GL_FLOAT,GL_FALSE,rowsize*sizeof(float),(GLvoid *)(6*sizeof(GLfloat)));
+        glEnableVertexAttribArray(2); 
+#endif //if DRAW_CUBE_3D
+         
     }
-     
+    
+#if !DRAW_CUBE_3D
   if (g_ebo == 0) {
       glGenBuffers(1,&g_ebo);//索引缓存对象
       glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,g_ebo);
@@ -197,15 +276,12 @@ void hbdraw()
 
       glBindBuffer(GL_ARRAY_BUFFER,0);
       glBindVertexArray(0);
-      
-      
-      glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
-      glm::mat4 trans(1.0f);
-      trans = glm::translate(trans, glm::vec3(1.0f, 1.0f, 0.0f));
-      vec = trans * vec;
-      std::cout << vec.x << "  " << vec.y  << "  " << vec.z << std::endl;
-      
+        
   }
+#endif
+
+  glEnable(GL_DEPTH_TEST);
+  
     const char * boxpath = GET_ROOTBUNDLE_PATH(box.jpeg);
     // "/Users/boob/Documents/demos/mygl/learnopengl/glfw-texture/shader.bundle/box.jpeg";
     createTextureIfNeed(&g_texture, boxpath);
@@ -220,7 +296,7 @@ void hbdraw()
     glUniform1f(offset,0.5f);
     */
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 //    glPolygonMode(GL_FRONT_AND_BACK,GL_LINES);
     glUseProgram(g_shaderProgram);
     
@@ -248,9 +324,12 @@ void hbdraw()
      */
     
     glm::mat4 model(1.0f);
-    float angle1 = (-55.0f/360.0f) * PI * 2;
+    float angle1 = (GLfloat)glfwGetTime() ;// (-55.0f/360.0f) * PI * 2;
+#if !DRAW_CUBE_3D
     model = glm::rotate(model,  angle1, glm::vec3(1.0f, 0.0f, 0.0f));
-    
+#else //DRAW_CUBE_3D
+     model  = glm::rotate(model, (GLfloat)glfwGetTime() , glm::vec3(0.5f,0.0f,1.0f));
+#endif //DRAW_CUBE_3D
     glm::mat4 view(1.0f);
     view = glm::translate(view, glm::vec3(0.0f,0.0f,-3.0f));
     
@@ -271,8 +350,12 @@ void hbdraw()
     
     
     glBindVertexArray(g_vao);
+
+#if DRAW_CUBE_3D
+    glDrawArrays(GL_TRIANGLES,0,36);
+#else 
     glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,0);
-     
+#endif
     
     glBindVertexArray(0);
     glBindTexture(GL_TEXTURE_2D,0);
