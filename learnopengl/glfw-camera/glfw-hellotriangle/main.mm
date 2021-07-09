@@ -166,9 +166,9 @@ void processInput(GLFWwindow *window)
     //调左右,根据左右向量的叉乘得到的左右向量 
     //或者使用左右键调整摄像头左右位置
     if(keys[GLFW_KEY_A])
-        cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+        cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
     if(keys[GLFW_KEY_D])
-        cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed; 
+        cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed; 
      
         
     //调上下
