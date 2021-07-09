@@ -95,7 +95,10 @@ static GLfloat camzValue = 10.0;
 glm::vec3 cameraPos   = glm::vec3(0.0f, 0.0f,  3.0f);
 glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp    = glm::vec3(0.0f, 1.0f,  0.0f);
-    
+  
+bool keys[1024];
+#define IS_PRESSKEY(PRESSKEY) (glfwGetKey(window, PRESSKEY) == GLFW_PRESS)
+#define IS_RLEASEKEY(PRESSKEY) (glfwGetKey(window, PRESSKEY) == GLFW_RELEASE)
 //输入控制，检查用户是否按下了返回键(Esc)
 void processInput(GLFWwindow *window)
 {
@@ -135,18 +138,38 @@ void processInput(GLFWwindow *window)
     
     GLfloat cameraSpeed = 0.05f;
     //调前后
-    if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+    if(IS_PRESSKEY(GLFW_KEY_W)) 
+        keys[GLFW_KEY_W] = true;
+    else if (IS_RLEASEKEY(GLFW_KEY_W)) 
+        keys[GLFW_KEY_W] = false;
+        
+    if(IS_PRESSKEY(GLFW_KEY_S)) 
+        keys[GLFW_KEY_S] = true;
+    else if (IS_RLEASEKEY(GLFW_KEY_S)) 
+        keys[GLFW_KEY_S] = false;
+    
+    if(IS_PRESSKEY(GLFW_KEY_A) || IS_PRESSKEY(GLFW_KEY_LEFT)) 
+        keys[GLFW_KEY_A] = true;
+    else if (IS_RLEASEKEY(GLFW_KEY_A) || IS_RLEASEKEY(GLFW_KEY_LEFT)) 
+        keys[GLFW_KEY_A] = false;
+        
+    if(IS_PRESSKEY(GLFW_KEY_D) || IS_PRESSKEY(GLFW_KEY_RIGHT)) 
+        keys[GLFW_KEY_D] = true;
+    else if (IS_RLEASEKEY(GLFW_KEY_D) || IS_RLEASEKEY(GLFW_KEY_RIGHT)) 
+        keys[GLFW_KEY_D] = false;    
+     
+    if(keys[GLFW_KEY_W])
         cameraPos += cameraSpeed * cameraFront;
-    if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+    if(keys[GLFW_KEY_S])
         cameraPos -= cameraSpeed * cameraFront;
+    
     //调左右,根据左右向量的叉乘得到的左右向量 
     //或者使用左右键调整摄像头左右位置
-    if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS || glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
+    if(keys[GLFW_KEY_A])
         cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
-    if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS|| glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
+    if(keys[GLFW_KEY_D])
         cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed; 
-    
-    
+     
         
     //调上下
     if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) {
