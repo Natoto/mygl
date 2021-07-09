@@ -24,7 +24,7 @@ static GLuint g_shaderProgram = 0;
 ///  画旋转立方体
 #define DRAW_CUBE_3D  1
 
-#define ROOTBUNDLE_PATH(FILE) "/Users/boob/Documents/demos/mygl/learnopengl/glfw-coor/shader.bundle/"#FILE
+#define ROOTBUNDLE_PATH(FILE) "/Users/boob/Documents/demos/mygl/learnopengl/glfw-camera/shader.bundle/"#FILE
 #define GET_ROOTBUNDLE_PATH(FILE)  ROOTBUNDLE_PATH(FILE)
 #define MY_GLANGLE(ANGLE)  ((ANGLE/360.0f) * PI * 2)
 int main(int argc, char * argv[]) {
@@ -115,33 +115,48 @@ void processInput(GLFWwindow *window)
         mixTextureValue +=0.1;
     }*/
     
-     if(glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) { 
-        camzValue +=1.0;
-        printf("camzValue:%f\n",camzValue);
-    }
-     if(glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) { 
-        camzValue -=1.0;
-        printf("camzValue:%f\n",camzValue);
-    }
-    
-    if(glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS) { 
-        camxValue +=1.0;
-        printf("camxValue:%f\n",camxValue);
-    }
-    if(glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS) { 
-        camxValue -=1.0;
-        printf("camxValue:%f\n",camxValue);
-    }
+//    
+//     if(glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) { 
+//        camzValue +=1.0;
+//        printf("camzValue:%f\n",camzValue);
+//    }
+//     if(glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) { 
+//        camzValue -=1.0;
+//        printf("camzValue:%f\n",camzValue);
+//    } 
+//    if(glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS) { 
+//        camxValue +=1.0;
+//        printf("camxValue:%f\n",camxValue);
+//    }
+//    if(glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS) { 
+//        camxValue -=1.0;
+//        printf("camxValue:%f\n",camxValue);
+//    }
     
     GLfloat cameraSpeed = 0.05f;
+    //调前后
     if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
         cameraPos += cameraSpeed * cameraFront;
     if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
         cameraPos -= cameraSpeed * cameraFront;
-    if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+    //调左右,根据左右向量的叉乘得到的左右向量 
+    //或者使用左右键调整摄像头左右位置
+    if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS || glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
         cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
-    if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+    if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS|| glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
         cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed; 
+    
+    
+        
+    //调上下
+    if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) {
+         cameraPos += cameraSpeed * cameraUp;
+    }
+    if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) {
+        cameraPos -= cameraSpeed * cameraUp;
+    }
+    
+    printf("cameraPos:x:%f y:%f z:%f\n",cameraPos.x,cameraPos.y,cameraPos.z);
 }
 
 // 当用户改变窗口的大小的时候，视口也应该被调整
