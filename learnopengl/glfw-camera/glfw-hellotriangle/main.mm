@@ -89,13 +89,20 @@ int main(int argc, char * argv[]) {
     return EXIT_SUCCESS;
 }
 static GLfloat mixTextureValue = 0.2;
+static GLfloat camxValue = 10.0;
+static GLfloat camzValue = 10.0;
+
+glm::vec3 cameraPos   = glm::vec3(0.0f, 0.0f,  3.0f);
+glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+glm::vec3 cameraUp    = glm::vec3(0.0f, 1.0f,  0.0f);
+    
 //输入控制，检查用户是否按下了返回键(Esc)
 void processInput(GLFWwindow *window)
 {
     if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS || glfwGetKey(window, GLFW_KEY_ENTER) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
     
-    if(glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS ) {
+   /* if(glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS ) {
         if (mixTextureValue<=0) {
             mixTextureValue = 1.0;
         }
@@ -106,7 +113,35 @@ void processInput(GLFWwindow *window)
             mixTextureValue = 0;
         }
         mixTextureValue +=0.1;
+    }*/
+    
+     if(glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) { 
+        camzValue +=1.0;
+        printf("camzValue:%f\n",camzValue);
     }
+     if(glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) { 
+        camzValue -=1.0;
+        printf("camzValue:%f\n",camzValue);
+    }
+    
+    if(glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS) { 
+        camxValue +=1.0;
+        printf("camxValue:%f\n",camxValue);
+    }
+    if(glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS) { 
+        camxValue -=1.0;
+        printf("camxValue:%f\n",camxValue);
+    }
+    
+    GLfloat cameraSpeed = 0.05f;
+    if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+        cameraPos += cameraSpeed * cameraFront;
+    if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+        cameraPos -= cameraSpeed * cameraFront;
+    if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+        cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+    if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+        cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed; 
 }
 
 // 当用户改变窗口的大小的时候，视口也应该被调整
@@ -339,11 +374,14 @@ void hbdraw()
     
     glm::mat4 view(1.0f);
     GLfloat radius = 10.0f;//MY_GLANGLE(10.0f);
-    GLfloat camx = sin(glfwGetTime()) * radius;
-    GLfloat camz = cos(glfwGetTime()) * radius;
-    view = glm::lookAt(glm::vec3(camx,0.0f,camz), glm::vec3(0.0f,0.0f,0.0f), glm::vec3(0.0f,1.0f,0.0f));
-//    view = glm::translate(view, glm::vec3(0.0f,0.0f,-10.0f));
-    
+//    GLfloat camx = sin(glfwGetTime()) * radius;
+//    GLfloat camz = cos(glfwGetTime()) * radius;
+    GLfloat camx = camxValue;
+    GLfloat camz = camzValue;
+    //R右向量， U上向量 D方向向量 P摄像机位置向量 -
+//    view = glm::lookAt(glm::vec3(camx,0.0f,camz), glm::vec3(0.0f,0.0f,0.0f), glm::vec3(0.0f,1.0f,0.0f));
+ 
+    view = glm::lookAt(cameraPos,cameraPos+cameraFront,cameraUp);
     glm::mat4 projection(1.0f);
     float rate = (float)(SCR_WIDTH / SCR_HEIGHT );
     float angle2 = MY_GLANGLE(45.0f);// (45.0f/360.0f) * PI * 2;
