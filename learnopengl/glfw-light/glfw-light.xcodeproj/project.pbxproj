@@ -471,7 +471,7 @@
 		788999E3269675A100EFDAD5 /* khrplatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = khrplatform.h; sourceTree = "<group>"; };
 		788999E5269675A100EFDAD5 /* glad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glad.h; sourceTree = "<group>"; };
 		788999E7269675A100EFDAD5 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
-		78EA531926876AEB00800E8F /* glfw-matrix */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "glfw-matrix"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78EA531926876AEB00800E8F /* glfw-light */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "glfw-light"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78EA531C26876AEB00800E8F /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		78EA533826876C3F00800E8F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		78EA533A26876C4C00800E8F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -1076,7 +1076,7 @@
 		78EA531A26876AEB00800E8F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				78EA531926876AEB00800E8F /* glfw-matrix */,
+				78EA531926876AEB00800E8F /* glfw-light */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1108,9 +1108,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		78EA531826876AEB00800E8F /* glfw-matrix */ = {
+		78EA531826876AEB00800E8F /* glfw-light */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 78EA532026876AEB00800E8F /* Build configuration list for PBXNativeTarget "glfw-matrix" */;
+			buildConfigurationList = 78EA532026876AEB00800E8F /* Build configuration list for PBXNativeTarget "glfw-light" */;
 			buildPhases = (
 				78EA531526876AEB00800E8F /* Sources */,
 				78EA531626876AEB00800E8F /* Frameworks */,
@@ -1120,9 +1120,9 @@
 			);
 			dependencies = (
 			);
-			name = "glfw-matrix";
+			name = "glfw-light";
 			productName = "glfw-hellotriangle";
-			productReference = 78EA531926876AEB00800E8F /* glfw-matrix */;
+			productReference = 78EA531926876AEB00800E8F /* glfw-light */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -1138,7 +1138,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 78EA531426876AEB00800E8F /* Build configuration list for PBXProject "glfw-matrix" */;
+			buildConfigurationList = 78EA531426876AEB00800E8F /* Build configuration list for PBXProject "glfw-light" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1151,7 +1151,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				78EA531826876AEB00800E8F /* glfw-matrix */,
+				78EA531826876AEB00800E8F /* glfw-light */,
 			);
 		};
 /* End PBXProject section */
@@ -1321,7 +1321,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		78EA531426876AEB00800E8F /* Build configuration list for PBXProject "glfw-matrix" */ = {
+		78EA531426876AEB00800E8F /* Build configuration list for PBXProject "glfw-light" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78EA531E26876AEB00800E8F /* Debug */,
@@ -1330,7 +1330,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		78EA532026876AEB00800E8F /* Build configuration list for PBXNativeTarget "glfw-matrix" */ = {
+		78EA532026876AEB00800E8F /* Build configuration list for PBXNativeTarget "glfw-light" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78EA532126876AEB00800E8F /* Debug */,

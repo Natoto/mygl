@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/boob/Documents/demos/mygl/learnopengl/glfw-matrix/glfw-matrix.xcodeproj">
+      location = "self:/Users/boob/Documents/demos/mygl/learnopengl/glfw-light/glfw-light.xcodeproj">
    </FileRef>
 </Workspace>
