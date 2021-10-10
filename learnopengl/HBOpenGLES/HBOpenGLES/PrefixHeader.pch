@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  HBOPENGLES
+//
+//  Created by boob on 2021/10/10.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+ 
+//抑制opengles被废弃的警告
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#endif /* PrefixHeader_pch */
