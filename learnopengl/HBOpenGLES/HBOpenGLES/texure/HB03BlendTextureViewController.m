@@ -114,6 +114,9 @@ static const int POINTCOUNT = 6;
     
 
 }
+//https://blog.51cto.com/zgame/1259518 
+//假设源颜色的四个分量（指红色，绿色，蓝色，alpha值）是(Rs, Gs, Bs, As)，目标颜色的四个分量是(Rd, Gd, Bd, Ad)，又设源因子为(Sr, Sg, Sb, Sa)，目标因子为(Dr, Dg, Db, Da)。
+//则混合产生的新颜色可以表示为： (Rs*Sr+Rd*Dr, Gs*Sg+Gd*Dg, Bs*Sb+Bd*Db, As*Sa+Ad*Da) 
 - (IBAction)btnfactorTap:(UIButton *)sender {
     
     if (sender.superview.tag == 100) { //src
