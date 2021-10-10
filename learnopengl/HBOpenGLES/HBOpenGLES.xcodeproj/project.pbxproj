@@ -23,6 +23,9 @@
 		7823721427127C3500C24E0C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7823721227127C3500C24E0C /* GLKit.framework */; };
 		7823721527127C3500C24E0C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7823721327127C3500C24E0C /* OpenGLES.framework */; };
 		7823721827127E3000C24E0C /* HelloGLKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7823721727127E3000C24E0C /* HelloGLKViewController.m */; };
+		7852B90B2712C8F9000173D4 /* HBFlipTextureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852B9092712C8F9000173D4 /* HBFlipTextureViewController.m */; };
+		7852B90C2712C8F9000173D4 /* HBFlipTextureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7852B90A2712C8F9000173D4 /* HBFlipTextureViewController.xib */; };
+		7852B9112712C9C9000173D4 /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 7852B9102712C9C9000173D4 /* grid.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,10 @@
 		7823721627127E3000C24E0C /* HelloGLKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloGLKViewController.h; sourceTree = "<group>"; };
 		7823721727127E3000C24E0C /* HelloGLKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloGLKViewController.m; sourceTree = "<group>"; };
 		7823721C2712841C00C24E0C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		7852B9082712C8F9000173D4 /* HBFlipTextureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HBFlipTextureViewController.h; path = HBOpenGLES/texure/HBFlipTextureViewController.h; sourceTree = SOURCE_ROOT; };
+		7852B9092712C8F9000173D4 /* HBFlipTextureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HBFlipTextureViewController.m; path = HBOpenGLES/texure/HBFlipTextureViewController.m; sourceTree = SOURCE_ROOT; };
+		7852B90A2712C8F9000173D4 /* HBFlipTextureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HBFlipTextureViewController.xib; path = HBOpenGLES/texure/HBFlipTextureViewController.xib; sourceTree = SOURCE_ROOT; };
+		7852B9102712C9C9000173D4 /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grid.png; path = "../../../Learning-OpenGL-ES-for-iOS-master/ch03_EXAMPLES/OpenGLES_Ch3_3/OpenGLES_Ch3_3/grid.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +76,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7814983E2712C7FE0082CDF9 /* texure */ = {
+			isa = PBXGroup;
+			children = (
+				7814981E271290F90082CDF9 /* TextureGLKViewController.h */,
+				7814981F271290F90082CDF9 /* TextureGLKViewController.m */,
+				7852B9082712C8F9000173D4 /* HBFlipTextureViewController.h */,
+				7852B9092712C8F9000173D4 /* HBFlipTextureViewController.m */,
+				7852B90A2712C8F9000173D4 /* HBFlipTextureViewController.xib */,
+				7814982E2712BDCF0082CDF9 /* HBGLKTextureLoader.h */,
+				7814982F2712BDCF0082CDF9 /* HBGLKTextureLoader.m */,
+			);
+			path = texure;
+			sourceTree = "<group>";
+		};
+		781498402712C80B0082CDF9 /* hello */ = {
+			isa = PBXGroup;
+			children = (
+				7823721627127E3000C24E0C /* HelloGLKViewController.h */,
+				7823721727127E3000C24E0C /* HelloGLKViewController.m */,
+			);
+			path = hello;
+			sourceTree = "<group>";
+		};
 		782371EB27127C1E00C24E0C = {
 			isa = PBXGroup;
 			children = (
@@ -93,16 +123,13 @@
 				782371F827127C1E00C24E0C /* AppDelegate.m */,
 				782371FA27127C1E00C24E0C /* SceneDelegate.h */,
 				782371FB27127C1E00C24E0C /* SceneDelegate.m */,
-				7814981E271290F90082CDF9 /* TextureGLKViewController.h */,
-				7814981F271290F90082CDF9 /* TextureGLKViewController.m */,
-				7814982E2712BDCF0082CDF9 /* HBGLKTextureLoader.h */,
-				7814982F2712BDCF0082CDF9 /* HBGLKTextureLoader.m */,
-				7823721627127E3000C24E0C /* HelloGLKViewController.h */,
-				7823721727127E3000C24E0C /* HelloGLKViewController.m */,
+				7814983E2712C7FE0082CDF9 /* texure */,
+				781498402712C80B0082CDF9 /* hello */,
 				782371FD27127C1E00C24E0C /* ViewController.h */,
 				782371FE27127C1E00C24E0C /* ViewController.m */,
 				7823721C2712841C00C24E0C /* PrefixHeader.pch */,
 				78149822271291C90082CDF9 /* leaves.gif */,
+				7852B9102712C9C9000173D4 /* grid.png */,
 				7823720027127C1E00C24E0C /* Main.storyboard */,
 				7823720327127C2200C24E0C /* Assets.xcassets */,
 				7823720527127C2200C24E0C /* LaunchScreen.storyboard */,
@@ -185,7 +212,9 @@
 				7823720727127C2200C24E0C /* LaunchScreen.storyboard in Resources */,
 				7823720427127C2200C24E0C /* Assets.xcassets in Resources */,
 				78149823271291CA0082CDF9 /* leaves.gif in Resources */,
+				7852B90C2712C8F9000173D4 /* HBFlipTextureViewController.xib in Resources */,
 				7823720227127C1E00C24E0C /* Main.storyboard in Resources */,
+				7852B9112712C9C9000173D4 /* grid.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +228,7 @@
 				782371FF27127C1E00C24E0C /* ViewController.m in Sources */,
 				782371F927127C1E00C24E0C /* AppDelegate.m in Sources */,
 				7823720A27127C2200C24E0C /* main.m in Sources */,
+				7852B90B2712C8F9000173D4 /* HBFlipTextureViewController.m in Sources */,
 				7823721827127E3000C24E0C /* HelloGLKViewController.m in Sources */,
 				782371FC27127C1E00C24E0C /* SceneDelegate.m in Sources */,
 				78149820271290F90082CDF9 /* TextureGLKViewController.m in Sources */,

@@ -8,6 +8,7 @@
 #import "ViewController.h"
 #import "HelloGLKViewController.h"
 #import "TextureGLKViewController.h"
+#import "HBFlipTextureViewController.h"
 @interface ViewController ()
 
 @end
@@ -29,5 +30,11 @@
     TextureGLKViewController * ctr = [TextureGLKViewController new];
     [self.navigationController pushViewController:ctr animated:YES];
 }
+- (IBAction)btn02fliptexture:(id)sender {
+    HBFlipTextureViewController * ctr = [HBFlipTextureViewController new];
+    [self.navigationController pushViewController:ctr animated:YES];
+}
+
+
 
 @end
