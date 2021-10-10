@@ -9,6 +9,8 @@
 #import "HelloGLKViewController.h"
 #import "TextureGLKViewController.h"
 #import "HBFlipTextureViewController.h"
+#import "HB03BlendTextureViewController.h"
+
 @interface ViewController ()
 
 @end
@@ -35,6 +37,11 @@
     [self.navigationController pushViewController:ctr animated:YES];
 }
 
+- (IBAction)btn03twoTextureTap:(id)sender {
+
+    HB03BlendTextureViewController * ctr = [HB03BlendTextureViewController new];
+    [self.navigationController pushViewController:ctr animated:YES];
+}
 
 
 @end

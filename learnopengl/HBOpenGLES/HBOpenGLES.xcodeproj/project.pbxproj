@@ -26,6 +26,9 @@
 		7852B90B2712C8F9000173D4 /* HBFlipTextureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852B9092712C8F9000173D4 /* HBFlipTextureViewController.m */; };
 		7852B90C2712C8F9000173D4 /* HBFlipTextureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7852B90A2712C8F9000173D4 /* HBFlipTextureViewController.xib */; };
 		7852B9112712C9C9000173D4 /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 7852B9102712C9C9000173D4 /* grid.png */; };
+		7852B91A2712D91E000173D4 /* beetle.png in Resources */ = {isa = PBXBuildFile; fileRef = 7852B9192712D91E000173D4 /* beetle.png */; };
+		7852B91F2712E20A000173D4 /* HB03BlendTextureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852B91D2712E20A000173D4 /* HB03BlendTextureViewController.m */; };
+		7852B9202712E20A000173D4 /* HB03BlendTextureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7852B91E2712E20A000173D4 /* HB03BlendTextureViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,10 @@
 		7852B9092712C8F9000173D4 /* HBFlipTextureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HBFlipTextureViewController.m; path = HBOpenGLES/texure/HBFlipTextureViewController.m; sourceTree = SOURCE_ROOT; };
 		7852B90A2712C8F9000173D4 /* HBFlipTextureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HBFlipTextureViewController.xib; path = HBOpenGLES/texure/HBFlipTextureViewController.xib; sourceTree = SOURCE_ROOT; };
 		7852B9102712C9C9000173D4 /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grid.png; path = "../../../Learning-OpenGL-ES-for-iOS-master/ch03_EXAMPLES/OpenGLES_Ch3_3/OpenGLES_Ch3_3/grid.png"; sourceTree = "<group>"; };
+		7852B9192712D91E000173D4 /* beetle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beetle.png; path = "../../../Learning-OpenGL-ES-for-iOS-master/Resources/beetle.png"; sourceTree = "<group>"; };
+		7852B91C2712E20A000173D4 /* HB03BlendTextureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HB03BlendTextureViewController.h; path = HBOpenGLES/texure/HB03BlendTextureViewController.h; sourceTree = SOURCE_ROOT; };
+		7852B91D2712E20A000173D4 /* HB03BlendTextureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HB03BlendTextureViewController.m; path = HBOpenGLES/texure/HB03BlendTextureViewController.m; sourceTree = SOURCE_ROOT; };
+		7852B91E2712E20A000173D4 /* HB03BlendTextureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HB03BlendTextureViewController.xib; path = HBOpenGLES/texure/HB03BlendTextureViewController.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +88,9 @@
 			children = (
 				7814981E271290F90082CDF9 /* TextureGLKViewController.h */,
 				7814981F271290F90082CDF9 /* TextureGLKViewController.m */,
+				7852B91C2712E20A000173D4 /* HB03BlendTextureViewController.h */,
+				7852B91D2712E20A000173D4 /* HB03BlendTextureViewController.m */,
+				7852B91E2712E20A000173D4 /* HB03BlendTextureViewController.xib */,
 				7852B9082712C8F9000173D4 /* HBFlipTextureViewController.h */,
 				7852B9092712C8F9000173D4 /* HBFlipTextureViewController.m */,
 				7852B90A2712C8F9000173D4 /* HBFlipTextureViewController.xib */,
@@ -129,6 +139,7 @@
 				782371FE27127C1E00C24E0C /* ViewController.m */,
 				7823721C2712841C00C24E0C /* PrefixHeader.pch */,
 				78149822271291C90082CDF9 /* leaves.gif */,
+				7852B9192712D91E000173D4 /* beetle.png */,
 				7852B9102712C9C9000173D4 /* grid.png */,
 				7823720027127C1E00C24E0C /* Main.storyboard */,
 				7823720327127C2200C24E0C /* Assets.xcassets */,
@@ -210,6 +221,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7823720727127C2200C24E0C /* LaunchScreen.storyboard in Resources */,
+				7852B9202712E20A000173D4 /* HB03BlendTextureViewController.xib in Resources */,
+				7852B91A2712D91E000173D4 /* beetle.png in Resources */,
 				7823720427127C2200C24E0C /* Assets.xcassets in Resources */,
 				78149823271291CA0082CDF9 /* leaves.gif in Resources */,
 				7852B90C2712C8F9000173D4 /* HBFlipTextureViewController.xib in Resources */,
@@ -231,6 +244,7 @@
 				7852B90B2712C8F9000173D4 /* HBFlipTextureViewController.m in Sources */,
 				7823721827127E3000C24E0C /* HelloGLKViewController.m in Sources */,
 				782371FC27127C1E00C24E0C /* SceneDelegate.m in Sources */,
+				7852B91F2712E20A000173D4 /* HB03BlendTextureViewController.m in Sources */,
 				78149820271290F90082CDF9 /* TextureGLKViewController.m in Sources */,
 				781498302712BDCF0082CDF9 /* HBGLKTextureLoader.m in Sources */,
 			);
