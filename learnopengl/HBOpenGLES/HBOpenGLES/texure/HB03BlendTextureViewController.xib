@@ -10,9 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HB03BlendTextureViewController">
             <connections>
+                <outlet property="dststack" destination="Gff-gZ-IRy" id="r18-iK-svj"/>
                 <outlet property="glkview" destination="cPK-Sk-SCH" id="R7q-XZ-xaZ"/>
                 <outlet property="lbldstfactor" destination="iQG-f5-0eV" id="STh-UL-etV"/>
                 <outlet property="lblsrcfactor" destination="xCO-Qf-tXl" id="qqJ-Wd-o8R"/>
+                <outlet property="scrstack" destination="hau-5s-dHF" id="nSd-KC-cU3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -212,7 +214,7 @@
                                 <constraint firstAttribute="width" constant="140" id="59k-hL-yW1"/>
                             </constraints>
                         </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCO-Qf-tXl">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCO-Qf-tXl">
                             <rect key="frame" x="8" y="495" width="216.5" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="r0Z-q8-Oab"/>
@@ -221,7 +223,7 @@
                             <color key="textColor" systemColor="systemRedColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQG-f5-0eV">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQG-f5-0eV">
                             <rect key="frame" x="226.5" y="495" width="179.5" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="hef-oN-11j"/>

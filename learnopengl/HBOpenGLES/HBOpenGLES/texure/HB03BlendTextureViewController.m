@@ -21,6 +21,8 @@
 @property (nonatomic, strong) CADisplayLink *displayLink;
 @property (weak, nonatomic) IBOutlet UILabel *lblsrcfactor;
 @property (weak, nonatomic) IBOutlet UILabel *lbldstfactor;
+@property (weak, nonatomic) IBOutlet UIStackView *scrstack;
+@property (weak, nonatomic) IBOutlet UIStackView *dststack;
 @property (nonatomic, assign) GLenum blendSrcfactor;
 @property (nonatomic, assign) GLenum blendDstfactor;
 @end
@@ -43,6 +45,10 @@ static const SceneVertex vertices[] =
    {{ 1.0f,  0.67f, 0.0f}, {1.0f, 1.0f}},
 };
 
+
+#define BLENDMODE_COORD1 1
+#define BLENDMODE_COORD2 2
+#define BLENDMODE BLENDMODE_COORD2
 static const int POINTCOUNT = 6;
 
 - (void)viewDidLoad
@@ -65,20 +71,27 @@ static const int POINTCOUNT = 6;
     GLKTextureInfo * textureInfo = [GLKTextureLoader textureWithCGImage:imageRef options:nil error:NULL];
     self.textureInfo0 = textureInfo;
     
-    imageRef = [[UIImage imageNamed:@"beetle.png"] CGImage];
-    self.textureInfo1 = [GLKTextureLoader textureWithCGImage:imageRef options:nil error:NULL];
-    
-    self.baseEffect.texture2d0.target = textureInfo.target;
-    self.baseEffect.texture2d0.name = textureInfo.name;
+    CGImageRef imageRef1 = [[UIImage imageNamed:@"beetle.png"] CGImage];
+    self.textureInfo1 = [GLKTextureLoader textureWithCGImage:imageRef1 options:nil error:NULL];
+    self.baseEffect.texture2d0.target = self.textureInfo0.target;
+    self.baseEffect.texture2d0.name = self.textureInfo0.name;
+    #if BLENDMODE == BLENDMODE_COORD2
+        self.baseEffect.texture2d1.target = self.textureInfo1.target;
+        self.baseEffect.texture2d1.name = self.textureInfo1.name;
+        self.baseEffect.texture2d1.envMode = GLKTextureEnvModeDecal;
+    #endif
     
     glClearColor(0.0,0.0,0.0,1.0f);
     glGenBuffers(1, &vertexBufferID);
     glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-        
+    self.scrstack.hidden = !(BLENDMODE == BLENDMODE_COORD1);
+    self.dststack.hidden = !(BLENDMODE == BLENDMODE_COORD1);   
+     
+    #if BLENDMODE == BLENDMODE_COORD1     
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
-    
+    #endif
     self.blendSrcfactor = GL_SRC_ALPHA;
     self.blendDstfactor = GL_ONE_MINUS_SRC_ALPHA;
 }
@@ -92,7 +105,10 @@ static const int POINTCOUNT = 6;
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {     
     glClear(GL_COLOR_BUFFER_BIT);    
+    
+    #if BLENDMODE == BLENDMODE_COORD1
     glBlendFunc(self.blendSrcfactor, self.blendDstfactor); 
+    #endif
     glEnableVertexAttribArray(GLKVertexAttribPosition);
     //设置索引值为index的顶点属性数组的位置，步长，指针，格式
     glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_TRUE, sizeof(SceneVertex), (GLvoid *)offsetof(SceneVertex, positionCoords));
@@ -100,6 +116,15 @@ static const int POINTCOUNT = 6;
     glEnableVertexAttribArray(GLKVertexAttribTexCoord0); 
     glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_TRUE, sizeof(SceneVertex), (GLvoid * )offsetof(SceneVertex, textureCoords));
     
+    #if BLENDMODE == BLENDMODE_COORD2
+    glEnableVertexAttribArray(GLKVertexAttribTexCoord1); 
+    glVertexAttribPointer(GLKVertexAttribTexCoord1, 2, GL_FLOAT, GL_TRUE, sizeof(SceneVertex), (GLvoid * )offsetof(SceneVertex, textureCoords));
+    
+    [self.baseEffect prepareToDraw]; 
+    glDrawArrays(GL_TRIANGLES, 0, POINTCOUNT); 
+    #endif
+    
+    #if BLENDMODE == BLENDMODE_COORD1
     //绘制叶子🍃
     self.baseEffect.texture2d0.target = self.textureInfo0.target;
     self.baseEffect.texture2d0.name =  self.textureInfo0.name;
@@ -111,6 +136,7 @@ static const int POINTCOUNT = 6;
     self.baseEffect.texture2d0.name =  self.textureInfo1.name;
     [self.baseEffect prepareToDraw];  
     glDrawArrays(GL_TRIANGLES, 0, POINTCOUNT); 
+    #endif
     
 
 }
